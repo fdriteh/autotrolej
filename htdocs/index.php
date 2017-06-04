@@ -15,7 +15,7 @@
 <html>
 	<head>
 		<title>Autotrolej<?=($page_title = make_page_title ($page)) ? ' | '.$page_title : ''?></title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/<?=get_css_file ($page, 'autotrolej')?>.css">
 	</head>
 	<body>
 <?php

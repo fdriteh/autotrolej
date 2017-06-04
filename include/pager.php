@@ -1,5 +1,6 @@
 <?php
 	$pagepath = '../page';
+	$csspath = '../htdocs/css';
 	$pages = array ();
 	if ($pagedir = @opendir ($pagepath))
 	{
@@ -41,5 +42,14 @@
 				$page_body .= "\t\t\t<h2>".sprintf (_('Return to %shome page%s.'), '<a href="/">', '</a>')."</h2>\n";
 		}
 		return $page_body;
+	}
+
+	function get_css_file ($pagename, $fallback)
+	{
+		global $csspath;
+
+		if (!file_exists ($csspath.'/'.$pagename.'.css'))
+			return $fallback;
+		return $pagename;
 	}
 ?>
