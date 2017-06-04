@@ -14,7 +14,7 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Autotrolej</title>
+		<title>Autotrolej<?=($page_title = make_page_title ($page)) ? ' | '.$page_title : ''?></title>
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>

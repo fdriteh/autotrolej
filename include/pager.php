@@ -11,6 +11,15 @@
 		closedir ($pagedir);
 	}
 
+	function make_page_title ($pagename)
+	{
+		global $pagepath;
+
+		include ($pagepath.'/'.$pagename.'.config.php');
+
+		return $page_title;
+	}
+
 	function make_page ($pagename)
 	{
 		global $pagepath, $pages;
