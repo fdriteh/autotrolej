@@ -70,7 +70,7 @@
 			$user_props[$user_id] = db_fetch_assoc (db_query ("SELECT * FROM `Korisnik` WHERE `id` = ".$user_id));
 			if (!$user_props[$user_id])
 				return;
-			$user_props[$user_id]['admin'] = db_fetch_row (db_query ("SELECT COUNT(*) FROM `admin` WHERE `id_korisnik` = ".$user_id))[0] > 0;
+			$user_props[$user_id]['admin'] = db_fetch_row (db_query ("SELECT COUNT(*) FROM `Administrator` WHERE `id_korisnik` = ".$user_id))[0] > 0;
 		}
 
 		if (isset ($user_props[$user_id][$key]))
