@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 04, 2017 at 10:10 PM
--- Server version: 5.5.55-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.21
+-- Host: 127.0.0.1
+-- Generation Time: May 31, 2017 at 02:26 PM
+-- Server version: 5.7.14
+-- PHP Version: 5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `autotrolej`
@@ -23,13 +23,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Administrator`
+-- Table structure for table `kartica`
 --
 
-CREATE TABLE IF NOT EXISTS `Administrator` (
-  `id_korisnik` int(11) NOT NULL,
-  PRIMARY KEY (`id_korisnik`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+CREATE TABLE `kartica` (
+  `brojkartice` varchar(45) NOT NULL,
+  `idkorisnik` int(255) DEFAULT NULL,
+  `datum_obnove` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kartica`
+--
+
+INSERT INTO `kartica` (`brojkartice`, `idkorisnik`, `datum_obnove`) VALUES
+('1234 5678 9876', 1, '2017-04-12'),
+(' 5139 2010 1742 2402 ', 2, '2017-04-27'),
+(' 2663 9435 4918 5063 ', 3, NULL),
+('1234', 22, NULL);
 
 -- --------------------------------------------------------
 
@@ -37,15 +48,15 @@ CREATE TABLE IF NOT EXISTS `Administrator` (
 -- Table structure for table `Autobus`
 --
 
-CREATE TABLE IF NOT EXISTS `Autobus` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `Autobus` (
+  `id` int(11) NOT NULL,
   `id_linija` int(11) DEFAULT NULL,
   `vrijeme` int(11) NOT NULL,
   `max_vrijeme` int(11) NOT NULL,
   `smjer` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_linija` (`id_linija`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Autobus`
@@ -53,51 +64,21 @@ CREATE TABLE IF NOT EXISTS `Autobus` (
 
 INSERT INTO `Autobus` (`id`, `id_linija`, `vrijeme`, `max_vrijeme`, `smjer`) VALUES
 (1, 1, 1, 25, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Favorit`
---
-
-CREATE TABLE IF NOT EXISTS `Favorit` (
-  `id_korisnik` int(11) NOT NULL,
-  `id_linija` int(11) NOT NULL,
-  PRIMARY KEY (`id_korisnik`,`id_linija`),
-  KEY `id_linija` (`id_linija`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Korisnik`
---
-
-CREATE TABLE IF NOT EXISTS `Korisnik` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `ime` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `prezime` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
+-- -------------------------------------------------------
 
 --
 -- Table structure for table `Linija`
 --
 
-CREATE TABLE IF NOT EXISTS `Linija` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE`Linija` (
+  `id` int(11) NOT NULL,
   `id_stanica_pol` int(11) NOT NULL,
   `id_stanica_odr` int(11) NOT NULL,
   `br` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_stanica_pol` (`id_stanica_pol`),
   KEY `id_stanica_odr` (`id_stanica_odr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `Linija`
@@ -107,19 +88,18 @@ INSERT INTO `Linija` (`id`, `id_stanica_pol`, `id_stanica_odr`, `br`) VALUES
 (1, 2, 1, 5),
 (4, 0, 0, 4),
 (6, 3, 2, 6);
-
--- --------------------------------------------------------
+-- -------------------------------------------------------
 
 --
 -- Table structure for table `LinijaStanica`
 --
 
-CREATE TABLE IF NOT EXISTS `LinijaStanica` (
+CREATE TABLE `LinijaStanica` (
   `id_linija` int(11) NOT NULL,
   `id_stanica` int(11) NOT NULL,
   PRIMARY KEY (`id_linija`,`id_stanica`),
   KEY `id_stanica` (`id_stanica`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `LinijaStanica`
@@ -143,20 +123,6 @@ INSERT INTO `LinijaStanica` (`id_linija`, `id_stanica`) VALUES
 (6, 64),
 (6, 66),
 (6, 68);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Pozicija`
---
-
-CREATE TABLE IF NOT EXISTS `Pozicija` (
-  `id_autobus` int(11) NOT NULL AUTO_INCREMENT,
-  `geo_duzina` double NOT NULL,
-  `geo_sirina` double NOT NULL,
-  PRIMARY KEY (`id_autobus`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=1 ;
-
 -- --------------------------------------------------------
 
 --
@@ -167,11 +133,11 @@ CREATE TABLE IF NOT EXISTS `Stanica` (
   `id` int(11) NOT NULL,
   `geo_duzina` double NOT NULL,
   `geo_sirina` double NOT NULL,
-  `naziv` varchar(50) COLLATE utf8_bin NOT NULL,
+  `naziv` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
   `vrijeme_polazak` int(11) NOT NULL,
   `vrijeme_povratak` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
 
 --
 -- Dumping data for table `Stanica`
@@ -196,42 +162,112 @@ INSERT INTO `Stanica` (`id`, `geo_duzina`, `geo_sirina`, `naziv`, `vrijeme_polaz
 (66, 14.4156372, 45.3412283, 'Vukovarska', 0, 0),
 (68, 14.3969073, 45.3430934, 'Novo naselje', 0, 0);
 
+-- ---------------------------------------------------------
+
 --
--- Constraints for dumped tables
+-- Table structure for table `korisnik`
+--
+
+CREATE TABLE `korisnik` (
+  `id` int(255) NOT NULL,
+  `ime` varchar(30) COLLATE utf8_croatian_ci NOT NULL,
+  `prezime` varchar(30) COLLATE utf8_croatian_ci NOT NULL,
+  `adresa` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
+  `telefon` varchar(15) COLLATE utf8_croatian_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
+  `lozinka` varchar(30) COLLATE utf8_croatian_ci NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Dumping data for table `korisnik`
+--
+
+INSERT INTO `korisnik` (`id`, `ime`, `prezime`, `adresa`, `telefon`, `email`, `lozinka`) VALUES
+(1, 'Kristijan', 'Blecic', 'Milutina Bataje 6', '+385917926501', 'kristijanblecic@gmail.com', 'proba'),
+(22, 'Karlo', 'Blecic', 'Milutina Bataje 6', '091 123 456', 'bankariznica@gmail.com', 'a');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `privremeni`
+--
+
+CREATE TABLE `privremeni` (
+  `brojkartice` varchar(40) NOT NULL,
+  `ime` varchar(15) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `prezime` varchar(15) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `adresa` varchar(40) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `telefon` varchar(15) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `email` varchar(40) CHARACTER SET utf8 COLLATE utf8_croatian_ci NOT NULL,
+  `kod` int(255) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transakcija`
+--
+
+CREATE TABLE `transakcija` (
+  `id` int(255) NOT NULL,
+  `idkorisnik` int(255) NOT NULL,
+  `kartica` int(255) NOT NULL,
+  `datum` date NOT NULL,
+  `zona` int(255) NOT NULL,
+  `cijena` varchar(15) NOT NULL,
+  `QR` int(255) DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transakcija`
+--
+
+INSERT INTO `transakcija` (`id`, `idkorisnik`, `kartica`, `datum`, `zona`, `cijena`, `QR`) VALUES
+(11, 1, 1, '2017-05-31', 1, '110kn', 0);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Constraints for table `Administrator`
+-- Indexes for table `kartica`
 --
-ALTER TABLE `Administrator`
-  ADD CONSTRAINT `Administrator_ibfk_1` FOREIGN KEY (`id_korisnik`) REFERENCES `Korisnik` (`id`);
+ALTER TABLE `kartica`
+  ADD PRIMARY KEY (`brojkartice`),
+  ADD UNIQUE KEY `idkorisnik` (`idkorisnik`);
 
 --
--- Constraints for table `Autobus`
+-- Indexes for table `korisnik`
 --
-ALTER TABLE `Autobus`
-  ADD CONSTRAINT `Autobus_ibfk_2` FOREIGN KEY (`id_linija`) REFERENCES `Linija` (`id`);
+ALTER TABLE `korisnik`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for table `Favorit`
+-- Indexes for table `privremeni`
 --
-ALTER TABLE `Favorit`
-  ADD CONSTRAINT `Favorit_ibfk_1` FOREIGN KEY (`id_korisnik`) REFERENCES `Korisnik` (`id`),
-  ADD CONSTRAINT `Favorit_ibfk_2` FOREIGN KEY (`id_linija`) REFERENCES `Linija` (`id`);
+ALTER TABLE `privremeni`
+  ADD PRIMARY KEY (`brojkartice`);
 
 --
--- Constraints for table `LinijaStanica`
+-- Indexes for table `transakcija`
 --
-ALTER TABLE `LinijaStanica`
-  ADD CONSTRAINT `LinijaStanica_ibfk_1` FOREIGN KEY (`id_linija`) REFERENCES `Linija` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `LinijaStanica_ibfk_2` FOREIGN KEY (`id_stanica`) REFERENCES `Stanica` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `transakcija`
+  ADD PRIMARY KEY (`id`);
 
 --
--- Constraints for table `Pozicija`
+-- AUTO_INCREMENT for dumped tables
 --
-ALTER TABLE `Pozicija`
-  ADD CONSTRAINT `Pozicija_ibfk_1` FOREIGN KEY (`id_autobus`) REFERENCES `Autobus` (`id`);
 
+--
+-- AUTO_INCREMENT for table `korisnik`
+--
+ALTER TABLE `korisnik`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT for table `transakcija`
+--
+ALTER TABLE `transakcija`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
