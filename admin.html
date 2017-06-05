@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Autotrolej</title>
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="admin.css">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+
+<script src="https://use.fontawesome.com/20310a0453.js"></script>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+			   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+				<a href="Autotrolej.html" class="navbar-brand">Naslovna</a>
+			</div>
+			  <div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Raspored</a></li>
+				<li><a href="#">Planiranje puta</a></li>
+				<li><a href="kupnja.html">Kupnja karta</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				
+				<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
+	 Admin</a></li>
+			</ul>
+			</div>
+		</div> 
+	</nav>
+
+		 	<div class="container-fluid main-container">
+  		<div class="col-md-2 sidebar">
+  			<div class="row">
+	<!-- uncomment code for absolute positioning tweek see top comment in css -->
+	<div class="absolute-wrapper"> </div>
+	<!-- Menu -->
+	<div class="side-menu">
+		<nav class="navbar navbar-default" role="navigation">
+			<!-- Main Menu -->
+			<div class="side-menu-container">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Oglašavanje i obavijesti</a></li>
+					<li><a href="#"><i class="fa fa-bus" aria-hidden="true"></i>Upravljanje linijama</a></li>
+					<li><a href="#"><i class="fa fa-ticket" aria-hidden="true"></i> Upravljanje kartama</a></li>
+
+					<!-- Dropdown-->
+					<li class="panel panel-default" id="dropdown">
+						<a data-toggle="collapse" href="#dropdown-lvl1">
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i> Korisnici <span class="caret"></span>
+						</a>
+
+						<!-- Dropdown level 1 -->
+						<div id="dropdown-lvl1" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="nav navbar-nav">
+									<li><a href="#">Registrirani korisnici</a></li>
+									<li><a href="#">Nedavne transakcije</a></li>
+									<li><a href="#">Link</a></li>
+
+									<!-- Dropdown level 2 -->
+									
+								</ul>
+							</div>
+						</div>
+					</li>
+
+					<li><a href="#"><span class="glyphicon glyphicon-signal"></span> Pregled poslovanja</a></li>
+
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</nav>
+
+	</div>
+</div>  		</div>
+  		<div class="col-md-10 content">
+  			  <div class="panel panel-default">
+	<div class="panel-heading">
+		Nova obavijest
+	</div>
+	<form method = "POST" action = "add-info.php"  enctype="multipart/form-data">
+		<div class="panel-body">
+				Naslov:<br>
+				<input type = "text" name = "title"> <br>
+				Tekst objave:
+				<textarea name = "info-txt" cols = "80" rows = "20">
+							
+				</textarea>
+				<input type="file" name="file" id="fileToUpload" accept="application/pdf">
+		</div>
+		<input type = "submit" class="btn btn-primary" value = "Objavi">	
+	</form>
+</div>
+  		</div>
+  		
+  	</div>
+	<script
+	  src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
+</body>
+</html>
