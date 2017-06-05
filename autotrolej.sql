@@ -44,6 +44,31 @@ INSERT INTO `Autobus` VALUES (1,1,1,25,0);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Karta`
+--
+
+DROP TABLE IF EXISTS `Karta`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Karta` (
+  `id_Karta` int(11) NOT NULL AUTO_INCREMENT,
+  `Naziv` varchar(32) CHARACTER SET utf32 COLLATE utf32_croatian_ci NOT NULL,
+  `Cijena` float NOT NULL,
+  PRIMARY KEY (`id_Karta`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Karta`
+--
+
+LOCK TABLES `Karta` WRITE;
+/*!40000 ALTER TABLE `Karta` DISABLE KEYS */;
+INSERT INTO `Karta` VALUES (1,'Mjesečna karta',110),(3,'Dnevna karta',15),(5,'Studentska',53),(6,'UÄeniÄka',53.5);
+/*!40000 ALTER TABLE `Karta` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Linija`
 --
 
@@ -269,4 +294,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-05 14:20:53
+-- Dump completed on 2017-06-05 19:39:50

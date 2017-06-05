@@ -5,7 +5,7 @@
 			ini_set("memory_limit","1024M");
 			define ('SITE_ROOT', realpath(dirname(__FILE__)));
 			
-			.//uspostava veze prema bazi
+			//uspostava veze prema bazi
 			$conn = new mysqli("localhost", "root", "dm","Autotrolej");
 			if ($conn->connect_error) {
 						die("Connection failed: " . $conn->connect_error);
@@ -24,7 +24,7 @@
 						echo "Error";
 					}
 			
-			//treba provjeriti zasto ne radi
+			
 				if($_FILES['file']){
 						$uploaddir = '/uploads/';
 						$uploadfile = $uploaddir . basename($_FILES['file']['name']);
