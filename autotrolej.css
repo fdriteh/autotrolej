@@ -1,0 +1,165 @@
+body {
+	padding-top:30px;
+	background:#1D2E3E;
+	font-family: 'Ubuntu', sans-serif;;
+}
+
+.navbar-inverse {
+	background: #1A8BA6;
+	color:white;
+	border-bottom:#1A8BA6;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color:white;
+}
+
+.navbar-inverse .navbar-brand {
+	color:white;
+}
+
+
+.jumbotron {
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+    height:450px;
+    padding-top:100px;
+}
+.jumbotron:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+    background-image: url('30362064401_380607d364_b.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.jumbotron h1  {
+    
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    font-weight: 800;
+} 
+
+.jumbotron p  {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+    color: #fff;
+    font-weight: 400;
+} 
+
+.proba {
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+    height:450px;
+    padding-top:35px;
+}
+.proba:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.3;
+    background-image: url('bijelo.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.proba h1  {
+    
+    text-align: left;
+    z-index: 2;    
+    position: relative;
+    color: #fff;
+    font-weight: 800;
+} 
+
+.proba p,form {
+    text-align: left;
+    z-index: 2;
+    font-size: 20px;
+    position: relative;
+    color: #fff;
+    font-weight: 400;
+}
+
+ .opis{
+	background: #1D2E3E;
+	color:white;
+    padding-bottom:20px;
+}
+
+.boja {
+	color:#1A8BA6;
+}
+
+.lijevi {
+    float:left; 
+    width:30%;
+    padding-left:200px;
+}
+
+.lijevi2 {
+    float:left; 
+    width:40%;
+    padding-left:50px;
+}
+
+.desni2 {
+    float:right; 
+    width:60%;
+    padding-left:100px;
+}
+
+.desni {
+    float:right; 
+    width:70%;
+    padding-left:100px;
+    padding-top:80px;
+}
+
+.crno {
+    text-align: left;
+    z-index: 2;
+    font-size: 20px;
+    position: relative;
+    color: #000;
+    font-weight: 400;
+}
+
+.srednji{
+    padding-left:400px;
+}
+
+table {
+    font-family: Arial;
+    font-size:20px;
+    text-align: center;
+}
+
+tr {
+    width:100px;
+}
