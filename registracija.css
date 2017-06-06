@@ -1,0 +1,43 @@
+body {
+	padding-top:30px;
+	background: #88AEF2;
+	font-family: 'Ubuntu', sans-serif;
+	margin:0;
+	padding: 0;
+}
+
+.navbar-inverse {
+	background: #1A8BA6;
+	color:white;
+	border-bottom:#1A8BA6;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+	color:white;
+}
+
+.navbar-inverse .navbar-brand {
+	color:white;
+}
+
+.main{
+	margin-top:100px;
+	
+}
+
+.forma{
+	padding:100px 0;
+	
+}
+
+.form-group {
+	margin-left:20%;
+}
+
+.form-control{
+	width:70%;
+}
+
+.ostalo {
+	margin-left:25%;	
+}
