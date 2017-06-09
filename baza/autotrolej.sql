@@ -95,7 +95,7 @@ CREATE TABLE `transakcija` (
   `datum` date NOT NULL,
   `zona` int(255) NOT NULL,
   `cijena` varchar(15) NOT NULL,
-  `QR` int(255) DEFAULT '0'
+  `QR` varchar(32) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
@@ -104,11 +104,11 @@ CREATE TABLE `transakcija` (
 
 INSERT INTO `transakcija` (`id`, `idkorisnik`, `kartica`, `datum`, `zona`, `cijena`, `QR`) VALUES
 (16, 1, 1, '2017-06-04', 1, '110kn', 0),
-(15, 1, 1, '2017-06-04', 1, '110kn', 0),
+(15, 1, 1, '2017-06-04', 1, '110kn', 1),
 (14, 1, 0, '2017-06-04', 1, '10kn', 313321),
 (13, 1, 0, '2017-05-31', 3, '30kn', 550041),
 (12, 1, 0, '2017-05-31', 2, '20kn', 581853),
-(11, 1, 1, '2017-05-31', 1, '110kn', 0);
+(11, 1, 1, '2017-05-31', 1, '110kn', 2);
 
 --
 -- Indexes for dumped tables
@@ -137,7 +137,8 @@ ALTER TABLE `privremeni`
 -- Indexes for table `transakcija`
 --
 ALTER TABLE `transakcija`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `QR` (`QR`);
 
 --
 -- AUTO_INCREMENT for dumped tables
