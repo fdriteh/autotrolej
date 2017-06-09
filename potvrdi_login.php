@@ -9,11 +9,13 @@
 	$email = !empty($_POST['email']) ? $_POST['email'] : '';
 	$password = !empty($_POST['password']) ? $_POST['password'] : '';
 
-	$result = $con->query("SELECT * FROM korisnik where email='$email' AND lozinka ='$password'");
+	$result = $con->query("SELECT * FROM korisnik where email='$email'");
 	$numrows = $result->num_rows;
 
-	if($numrows) {
+	if($numrows)
 		$row = $result->fetch_array();
+
+	if($numrows && password_verify($password, $row['lozinka'])) {
 		$_SESSION['logged1'] = TRUE;
 		$_SESSION['email'] = $email;
  		$_SESSION['ime'] = $row['ime'];

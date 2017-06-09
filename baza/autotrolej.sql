@@ -55,7 +55,7 @@ CREATE TABLE `korisnik` (
   `adresa` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
   `telefon` varchar(15) COLLATE utf8_croatian_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_croatian_ci NOT NULL,
-  `lozinka` varchar(30) COLLATE utf8_croatian_ci NOT NULL
+  `lozinka` varchar(255) COLLATE utf8_croatian_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
 
 --
