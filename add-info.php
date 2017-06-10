@@ -5,10 +5,16 @@
 			ini_set("memory_limit","1024M");
 			define ('SITE_ROOT', realpath(dirname(__FILE__)));
 			
-			//uspostava veze prema bazi
-			$conn = new mysqli("localhost", "root", "dm","Autotrolej");
+			session_start();
+			if(!$_SESSION['is_admin'])
+				header('Location: /');
+
+			include 'includes/connection.php';
+			include 'includes/functions.php';
+
+			$conn = new mysqli($host, $username, $password, $db);
 			if ($conn->connect_error) {
-						die("Connection failed: " . $conn->connect_error);
+				die("Connection failed: " . $conn->connect_error);
 			}
 			echo "Connected successfully<br>";
 			
@@ -44,7 +50,7 @@
 					}
 			
 			
-					header('Location: admin.html');
+					header('Location: admin.php');
 			
 			}
 			//greska u slučaju da je polje naslov ili objava prazan
