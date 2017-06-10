@@ -1,5 +1,8 @@
 <?php
-		include("karte-admin.php");
+	session_start();
+	if(!$_SESSION['is_admin'])
+		header('Location: /');
+	include("karte-admin.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -28,12 +31,14 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Raspored</a></li>
 				<li><a href="#">Planiranje puta</a></li>
-				<li><a href="kupnja.html">Kupnja karta</a></li>
+				<li><a href="kupnja.php">Kupnja karta</a></li>
+				<li><a href="admin.php">Administracija</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				
-				<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>
-	 Admin</a></li>
+			<?php
+				echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#''><i class='fa fa-user' aria-hidden='true'></i> Korisnik: ".$ime."<span class='caret'></span></a><ul class='dropdown-menu'><li><a href='user_page.php'>Osobni podaci</a></li><li><a href='#'>Favoriti</a></li><li><a href='#'>Kupljene karte</a></li></ul></li>";
+				echo "<li><a href='logout.php'><i class='fa fa-power-off' aria-hidden='true'></i> Logout</a></li>";
+			?>
 			</ul>
 			</div>
 		</div> 

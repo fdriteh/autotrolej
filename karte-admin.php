@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	if(!$_SESSION['is_admin'])
+		header('Location: /');
 
 	include 'includes/connection.php';
 	include 'includes/functions.php';
