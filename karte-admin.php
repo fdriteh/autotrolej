@@ -11,15 +11,19 @@
 		die("Connection failed: " . $conn->connect_error);
 	}
 
-	$logged1 = !empty($_SESSION['logged1']) ? $_SESSION['logged1'] : '';
-	$ime = !empty($_SESSION['ime']) ? $_SESSION['ime'] : '';
-
 	//dio koda zadužen za dodavanje nove karte u bazu -- u funkciji rj
 	if(!empty($_POST['naziv']) && !empty($_POST["cijena"])){
 		$sql = "INSERT INTO Karta VALUES(NULL,'".$_POST['naziv'].
 			"','".$_POST['cijena']."')";
-		if($conn->query($sql)== true) echo "YES";
-		else echo "NO";
+		if($conn->query($sql)== true) alert("Karta je dodana.", "/admin.php");
+		else alert("Karta nije mogla biti dodana.", "/admin.php");
+	}
+
+	if(!empty($_GET['delete']))
+	{
+		$sql = "DELETE FROM `Karta` WHERE `id_Karta` = '".$_GET['delete']."'";
+		if($conn->query($sql) == true) alert("Karta je izbrisana.", "/admin.php");
+		else alert("Karta nije mogla biti izbrisana.", "/admin.php");
 	}
 
 ?>

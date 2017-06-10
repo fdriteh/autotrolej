@@ -2,7 +2,17 @@
 	session_start();
 	if(!$_SESSION['is_admin'])
 		header('Location: /');
-	include("karte-admin.php");
+
+	include 'includes/connection.php';
+	include 'includes/functions.php';
+
+	$conn = new mysqli($host, $username, $password, $db);
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+
+	$logged1 = !empty($_SESSION['logged1']) ? $_SESSION['logged1'] : '';
+	$ime = !empty($_SESSION['ime']) ? $_SESSION['ime'] : '';
 ?>
 <!DOCTYPE html>
 <html>
@@ -109,7 +119,7 @@
 				<div class="panel-body">
 						UPRAVLJANJE LINIJAMA
 						<?php
-							$sql = "SELECT `br`, `naziv_pol`, `naziv_odr` FROM Linija LEFT JOIN (
+							$sql = "SELECT `Linija`.`id` AS `id_linija`, `br`, `naziv_pol`, `naziv_odr` FROM Linija LEFT JOIN (
 								SELECT `id`, `naziv` AS `naziv_pol` FROM `Stanica`
 							) AS `x` ON `id_stanica_pol`=`x`.`id` LEFT JOIN (
 								SELECT `id`, `naziv` AS `naziv_odr` FROM `Stanica`
@@ -122,13 +132,46 @@
 										"<td>".$row['br']."</td>".
 										"<td>".$row['naziv_pol']."</td>".
 										"<td>".$row['naziv_odr']."</td>".
-										"<td><button>Izbriši</button></td>".
+										"<td><button onclick=\"brisi_liniju(".$row['id_linija'].")\">Izbriši</button></td>".
 										"</tr>";
 									}
 								echo "</table>";
 							}
 							else echo "0 results"
 						?>
+					<p>&nbsp;</p>
+					<?php
+						$sql = "SELECT `id`, `naziv` FROM `Stanica`";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							$stanice = array();
+							while($row = $result->fetch_assoc())
+								$stanice[$row['id']] = $row['naziv'];
+					?>
+					<div id = "dodaj-liniju">
+							<form method = "POST" action = "linije-admin.php">
+								Prva stanica:
+								<select name="id_stanica_pol">
+								<?php
+									foreach ($stanice as $id=>$naziv)
+										echo "<option value=\"$id\">$naziv</option>";
+								?>
+								</select>
+								Zadnja stanica:
+								<select name="id_stanica_odr">
+								<?php
+									foreach ($stanice as $id=>$naziv)
+										echo "<option value=\"$id\">$naziv</option>";
+								?>
+								</select>
+								Broj linije:
+								<input type = "text" name = "br">
+								<input type = "submit" class="btn btn-primary" value = "Dodaj" style = "margin : 0;">
+							</form>
+					</div>
+					<?php
+						}
+					?>
 				</div>
 
 	</div>
@@ -150,16 +193,14 @@
 												while($row = $result->fetch_assoc()) {
 														echo "<tr><td>".$row['Naziv']."</td><td>"
 																			.$row['Cijena']."</td>
-																			<td><button >Izbriši</button></td></tr>";
+																			<td><button onclick=\"brisi_kartu(".$row['id_Karta'].")\">Izbriši</button></td></tr>";
 														}
 											}
 											else echo "0 results"
 								?>
 						</table>
-
-						<button id = "dodaj-btn" class="btn btn-primary" onClick = "dodaj_kartu()">Dodaj kartu</button>
-
-						<div id = "dodaj" style = "visibility : hidden;">
+						<p>&nbsp;</p>
+						<div id = "dodaj-kartu">
 								<form method = "POST" action = "karte-admin.php">
 									Naziv karte:
 									<input type = "text" name = "naziv">

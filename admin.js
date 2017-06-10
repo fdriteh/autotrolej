@@ -82,3 +82,12 @@ pregled.addEventListener("click", function(){
     obavijest.style.display ="none";
 });
 
+function brisi_liniju(id)
+{
+	window.location.href = "/linije-admin.php?delete=" + id;
+}
+
+function brisi_kartu(id)
+{
+	window.location.href = "/karte-admin.php?delete=" + id;
+}
