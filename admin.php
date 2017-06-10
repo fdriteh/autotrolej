@@ -228,17 +228,56 @@
 							if ($result->num_rows > 0) {
 								echo "<table width=\"80%\"><tr><th>Email</th><th>Prezime</th><th>Ime</th><th>Adresa</th><th>Telefon</th></tr>";
 								while($row = $result->fetch_assoc()) {
+									$id = $row['id'];
 									echo "<tr>".
-										"<td>".$row['email']."</td>".
-										"<td>".$row['prezime']."</td>".
-										"<td>".$row['ime']."</td>".
-										"<td>".$row['adresa']."</td>".
-										"<td>".$row['telefon']."</td>";
+										"<td id=\"email-$id\">".$row['email']."</td>".
+										"<td id=\"prezime-$id\">".$row['prezime']."</td>".
+										"<td id=\"ime-$id\">".$row['ime']."</td>".
+										"<td id=\"adresa-$id\">".$row['adresa']."</td>".
+										"<td id=\"telefon-$id\">".$row['telefon']."</td>".
+										"<td><button onclick=\"izmijeni_korisnika($id)\">Izmijeni</button></td>";
 									if($row['id'] != $_SESSION['logged1'])
-										echo "<td><button onclick=\"brisi_korisnika(".$row['id'].")\">Izbriši</button></td>";
+										echo "<td><button onclick=\"brisi_korisnika($id)\">Izbriši</button></td>";
 									echo "</tr>";
 									}
 								echo "</table>";
+						?>
+						<p>&nbsp;</p>
+						<div id="izmijeni-korisnika" style="display: none">
+							<form method="POST" action="korisnici-admin.php">
+								<table>
+									<tr>
+										<td>Email:</td>
+										<td><input type="text" name="email"></td>
+									</tr>
+									<tr>
+										<td>Prezime:</td>
+										<td><input type="text" name="prezime"></td>
+									</tr>
+									<tr>
+										<td>Ime:</td>
+										<td><input type="text" name="ime"></td>
+									</tr>
+									<tr>
+										<td>Adresa:</td>
+										<td><input type="text" name="adresa"></td>
+									</tr>
+									<tr>
+										<td>Telefon:</td>
+										<td><input type="text" name="telefon"></td>
+									</tr>
+									<tr>
+										<td>Lozinka:</td>
+										<td><input type="password" name="lozinka"></td>
+									</tr>
+									<tr>
+										<td><input type="submit" class="btn btn-primary" value="Izmijeni" style="margin:0;"> <input type="reset" class="btn btn-primary" value="Poništi" style="margin:0;" onclick="document.getElementById('izmijeni-korisnika').style.display = 'none';"></td>
+									</tr>
+								</table>
+								<input type="hidden" name="id" value="">
+							</form>
+						</div>
+						<?php
 							}
 							else echo "0 results"
 						?>

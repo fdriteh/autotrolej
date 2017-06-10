@@ -96,3 +96,12 @@ function brisi_korisnika(id)
 {
 	window.location.href = "/korisnici-admin.php?delete=" + id;
 }
+
+function izmijeni_korisnika(id)
+{
+	var fields = ['email', 'prezime', 'ime', 'adresa', 'telefon'];
+	document.getElementById('izmijeni-korisnika').style.display = '';
+	for (var i = 0; i < fields.length; i++)
+		document.querySelectorAll('#izmijeni-korisnika [name="' + fields[i] + '"]')[0].value = document.getElementById(fields[i] + '-' + id).innerText;
+	document.querySelectorAll('#izmijeni-korisnika [name="id"]')[0].value = id;
+}

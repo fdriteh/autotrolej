@@ -25,11 +25,14 @@
 			&& !empty($_POST['telefon']))
 	{
 		$sql = "UPDATE `korisnik` SET".
-		 "`email`='".$_POST['email']."','".
-		 "`prezime`='".$_POST['prezime']."','".
-		 "`ime`='".$_POST['ime']."','".
-		 "`adresa`='".$_POST['adresa']."','".
-		 "`telefon`='".$_POST['telefon']."')";
+			"`email`='".$_POST['email']."',".
+			"`prezime`='".$_POST['prezime']."',".
+			"`ime`='".$_POST['ime']."',".
+			"`adresa`='".$_POST['adresa']."',".
+			"`telefon`='".$_POST['telefon']."'";
+		if(!empty($_POST['lozinka']))
+			$sql .= ", `lozinka`='".password_hash($_POST['lozinka'], PASSWORD_DEFAULT)."'";
+		$sql .= "WHERE `id`='".$_POST['id']."'";
 		if($conn->query($sql)== true) alert("Podatci o korisniku su izmijenjeni.", "/admin.php");
 		else alert("Podatci o korisniku nisu mogli biti izmijenjeni.", "/admin.php");
 	}
