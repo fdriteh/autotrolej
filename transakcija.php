@@ -13,7 +13,7 @@
 	$bool = !empty($_SESSION['bool']) ? $_SESSION['bool'] : '0';
 	$zona = !empty($_SESSION['zona']) ? $_SESSION['zona'] : '';
 	$date = date('Y-m-d');
-	$QRkod = mt_rand(111111,999999);
+	$QRkod = bin2hex(openssl_random_pseudo_bytes(16));
 	$cijena .= "kn";
 
 	$subject = "Kupljena karta";

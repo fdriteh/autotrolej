@@ -54,7 +54,8 @@
 	 		$location = "registracija.php?odabir=ne";
 	 		alert($message, $location);
 	 	} else {
-	 		$result = $con->query("INSERT INTO korisnik(ime,prezime,adresa,telefon,email,lozinka) VALUES ('$ime','$prezime','$adresa','$telefon','$email','$password1')");
+			$password_hash = password_hash($password1, PASSWORD_DEFAULT);
+	 		$result = $con->query("INSERT INTO korisnik(ime,prezime,adresa,telefon,email,lozinka) VALUES ('$ime','$prezime','$adresa','$telefon','$email','$password_hash')");
 	 		$result2 = $con->query("SELECT * FROM korisnik WHERE email = '$email' ");
 	 		$row2 = $result2->fetch_array();
 	 		$id = $row2['id'];
@@ -62,7 +63,7 @@
 	 		$result5 = $con->query("DELETE FROM privremeni WHERE brojkartice = '$brojkartice'");
 
 	 		$message = "Registracija uspješna!";
-	 		$location = "login php";
+	 		$location = "login.php";
 	 		alert($message, $location);
 
 			//header("Location: autotrolej.php");	

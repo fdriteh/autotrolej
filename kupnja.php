@@ -62,13 +62,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-				<a href="Autotrolej.php" class="navbar-brand">Naslovna</a>
+				<a href="/" class="navbar-brand">Naslovna</a>
 			</div>
 			  <div class="collapse navbar-collapse" id="bs-nav-demo">
 			<ul class="nav navbar-nav">
 				<li><a href="#">Raspored</a></li>
 				<li><a href="#">Planiranje puta</a></li>
 				<li><a href="kupnja.php">Kupnja karta</a></li>
+				<?php
+					if($_SESSION['is_admin'])
+						echo "<li><a href=\"admin.php\">Administracija</a></li>";
+				?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php
