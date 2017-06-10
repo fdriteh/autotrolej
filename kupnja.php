@@ -62,7 +62,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-				<a href="Autotrolej.php" class="navbar-brand">Naslovna</a>
+				<a href="/" class="navbar-brand">Naslovna</a>
 			</div>
 			  <div class="collapse navbar-collapse" id="bs-nav-demo">
 			<ul class="nav navbar-nav">
