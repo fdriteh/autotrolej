@@ -108,6 +108,27 @@
 
 				<div class="panel-body">
 						UPRAVLJANJE LINIJAMA
+						<?php
+							$sql = "SELECT `br`, `naziv_pol`, `naziv_odr` FROM Linija LEFT JOIN (
+								SELECT `id`, `naziv` AS `naziv_pol` FROM `Stanica`
+							) AS `x` ON `id_stanica_pol`=`x`.`id` LEFT JOIN (
+								SELECT `id`, `naziv` AS `naziv_odr` FROM `Stanica`
+							) AS `y` ON `id_stanica_odr`=`y`.`id`";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								echo "<table width=\"80%\"><tr><th>Broj</th><th>Polazište</th><th>Povratište</th></tr>";
+								while($row = $result->fetch_assoc()) {
+									echo "<tr>".
+										"<td>".$row['br']."</td>".
+										"<td>".$row['naziv_pol']."</td>".
+										"<td>".$row['naziv_odr']."</td>".
+										"<td><button>Izbriši</button></td>".
+										"</tr>";
+									}
+								echo "</table>";
+							}
+							else echo "0 results"
+						?>
 				</div>
 
 	</div>
