@@ -224,7 +224,7 @@ CREATE TABLE `korisnik` (
 
 LOCK TABLES `korisnik` WRITE;
 /*!40000 ALTER TABLE `korisnik` DISABLE KEYS */;
-INSERT INTO `korisnik` VALUES (1,'Kristijan','Blecic','Milutina Bataje 6','+385917926501','kristijanblecic@gmail.com','proba'),(22,'Karlo','Blecic','Milutina Bataje 6','091 123 456','bankariznica@gmail.com','a');
+INSERT INTO `korisnik` VALUES (1,'Kristijan','Blecic','Milutina Bataje 6','+385917926501','kristijanblecic@gmail.com','$2y$10$XN9hWWZ2eDtx9feBecOCQOeTaaPwl3rkFT5Uhr4aMTSJqaC3Vjixe'),(22,'Karlo','Blecic','Milutina Bataje 6','091 123 456','bankariznica@gmail.com','$2y$10$ecNMOV5YluqPnGBlkagV.enYfI1pK1Fr4gCKj1YTfto.LVhCNsx3e');
 /*!40000 ALTER TABLE `korisnik` ENABLE KEYS */;
 UNLOCK TABLES;
 
