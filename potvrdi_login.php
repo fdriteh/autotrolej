@@ -16,7 +16,7 @@
 		$row = $result->fetch_array();
 
 	if($numrows && password_verify($password, $row['lozinka'])) {
-		$_SESSION['logged1'] = TRUE;
+		$_SESSION['logged1'] = $row['id'];
 		$_SESSION['email'] = $email;
  		$_SESSION['ime'] = $row['ime'];
 		if($row['is_admin'])

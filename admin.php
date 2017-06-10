@@ -222,6 +222,26 @@
 
 				<div class="panel-body">
 						UPRAVLJANJE korisnicima, mijenjanje imena, adrese, emaila, broja karte ...
+						<?php
+							$sql = "SELECT * from `korisnik`";
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+								echo "<table width=\"80%\"><tr><th>Email</th><th>Prezime</th><th>Ime</th><th>Adresa</th><th>Telefon</th></tr>";
+								while($row = $result->fetch_assoc()) {
+									echo "<tr>".
+										"<td>".$row['email']."</td>".
+										"<td>".$row['prezime']."</td>".
+										"<td>".$row['ime']."</td>".
+										"<td>".$row['adresa']."</td>".
+										"<td>".$row['telefon']."</td>";
+									if($row['id'] != $_SESSION['logged1'])
+										echo "<td><button onclick=\"brisi_korisnika(".$row['id'].")\">Izbriši</button></td>";
+									echo "</tr>";
+									}
+								echo "</table>";
+							}
+							else echo "0 results"
+						?>
 				</div>
 	</div>
 

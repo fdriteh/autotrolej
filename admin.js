@@ -91,3 +91,8 @@ function brisi_kartu(id)
 {
 	window.location.href = "/karte-admin.php?delete=" + id;
 }
+
+function brisi_korisnika(id)
+{
+	window.location.href = "/korisnici-admin.php?delete=" + id;
+}
