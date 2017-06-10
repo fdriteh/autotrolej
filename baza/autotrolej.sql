@@ -16,6 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `Administrator`
+--
+
+DROP TABLE IF EXISTS `Administrator`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Administrator` (
+  `id_korisnik` int(11) NOT NULL,
+  PRIMARY KEY (`id_korisnik`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Administrator`
+--
+
+LOCK TABLES `Administrator` WRITE;
+/*!40000 ALTER TABLE `Administrator` DISABLE KEYS */;
+INSERT INTO `Administrator` VALUES (1);
+/*!40000 ALTER TABLE `Administrator` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Autobus`
 --
 
