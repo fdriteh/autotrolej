@@ -41,7 +41,7 @@
 			?>
 			</ul>
 			</div>
-		</div> 
+		</div>
 	</nav>
 
 		 	<div class="container-fluid main-container">
@@ -55,19 +55,19 @@
 			<!-- Main Menu -->
 			<div class="side-menu-container">
 				<ul class="nav navbar-nav">
-					
+
 					<li class="active"><a href="#" id="oglasavanje"><span class="glyphicon glyphicon-dashboard"></span>Oglašavanje i obavijesti</a></li>
-					
+
 
 					<li><a href="#"  id="uprlinije"><i class="fa fa-bus" aria-hidden="true"></i> Upravljanje linijama</a></li>
-					
+
 
 					<li><a href="#"  id="uprkartama"><i class="fa fa-ticket" aria-hidden="true"></i> Upravljanje kartama</a></li>
 
 
 					<li><a href="#"  id="regkorisnici"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
 						 Registriran korisnici</a></li>
-					
+
 
 					<li><a href="#"  id="pregled"><span class="glyphicon glyphicon-signal"></span> Pregled poslovanja</a></li>
 
@@ -76,11 +76,11 @@
 		</nav>
 
 	</div>
-</div>  		
+</div>
 </div>
 
 <div class="col-md-10 content">
-  		
+
 
 	 <div class="panel panel-default" id="obavijest">
 		<div class="panel-heading" >
@@ -92,37 +92,37 @@
 						<input type = "text" name = "title"> <br>
 						Tekst objave:
 						<textarea name = "info-txt" cols = "80" rows = "20">
-									
+
 						</textarea>
 						<input type="file" name="file" id="fileToUpload" accept="application/pdf">
 				</div>
-				<input type = "submit" class="btn btn-primary" value = "Objavi">	
+				<input type = "submit" class="btn btn-primary" value = "Objavi">
 			</form>
 	</div>
-	
+
 
 	 <div class="panel panel-default" id="linije">
 		<div class="panel-heading" >
 			Upravljanje linijama
 		</div>
-			
+
 				<div class="panel-body">
 						UPRAVLJANJE LINIJAMA
 				</div>
-				
+
 	</div>
 
 
-	
+
 	 <div class="panel panel-default" id="karte">
 		<div class="panel-heading" >
 			Upravljanje kartama
 		</div>
-			
+
 				<div class="panel-body">
 						<table  width = 80%>
 								<tr><th>Naziv</th><th>Cijena (Kuna)</th></tr>
-								<?php 
+								<?php
 											$sql = "SELECT *  FROM Karta";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
@@ -131,13 +131,13 @@
 																			.$row['Cijena']."</td>
 																			<td><button >Izbriši</button></td></tr>";
 														}
-											} 
-											else echo "0 results" 
+											}
+											else echo "0 results"
 								?>
 						</table>
-						
+
 						<button id = "dodaj-btn" class="btn btn-primary" onClick = "dodaj_kartu()">Dodaj kartu</button>
-										
+
 						<div id = "dodaj" style = "visibility : hidden;">
 								<form method = "POST" action = "karte-admin.php">
 									Naziv karte:
@@ -148,7 +148,7 @@
 								</form>
 						</div>
 				</div>
-				
+
 	</div>
 
 
@@ -157,21 +157,21 @@
 		<div class="panel-heading" >
 			Korisnici
 		</div>
-			
+
 				<div class="panel-body">
 						UPRAVLJANJE korisnicima, mijenjanje imena, adrese, emaila, broja karte ...
-				</div>				
-	</div>	
+				</div>
+	</div>
 
 	<div class="panel panel-default" id="poslovanje">
 		<div class="panel-heading" >
 			Poslovanje
 		</div>
-			
+
 				<div class="panel-body">
 						<table width = 80%>
 							<tr><th>ID</th><th>Cijena</th></tr>
-								<?php 
+								<?php
 											$sql = "SELECT *  FROM transakcija";
 											$result = $conn->query($sql);
 											if ($result->num_rows > 0) {
@@ -179,13 +179,13 @@
 														echo "<tr><td>".$row['id']."</td><td>"
 																			.$row['cijena']."</td></tr>";
 														}
-											} 
-											else echo "0 results" 
+											}
+											else echo "0 results"
 								?>
-						
+
 						</table>
-				</div>				
-	</div>	
+				</div>
+	</div>
 
 
 
@@ -193,8 +193,8 @@
 
 
 	</div>
-  		
-  	
+
+
 
 
 
