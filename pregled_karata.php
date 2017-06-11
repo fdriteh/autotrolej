@@ -67,8 +67,8 @@
 			echo "<div class='lijevi2'>";
 				echo "<br><br><br><br>";
 				echo "<p>";
-				echo "<span style='padding-left:250px;'><button><a href='pregled_karata.php?k=j'>Jednodnevne</a></button></span><br><br>";
-				echo "<span style='padding-left:285px;'><button><a href='pregled_karata.php?k=m'>Mjesecne</a></button></span>";
+				echo "<span style='padding-left:250px;'><a href='pregled_karata.php?k=j'><button>Jednodnevne</button></a></span><br><br>";
+				echo "<span style='padding-left:285px;'><a href='pregled_karata.php?k=m'><button>Mjesecne</button></a></span>";
 				echo "</p>"; 
 		  	echo "</div>";
 		  	echo "<div class='desni2'>";
@@ -85,8 +85,8 @@
 			echo "<div class='lijevi2'>";
 				echo "<br><br><br><br>";
 				echo "<p>";
-				echo "<span style='padding-left:250px;'><button><a href='pregled_karata.php?k=j'>Jednodnevne</a></button></span><br><br>";
-				echo "<span style='padding-left:285px;'><button><a href='pregled_karata.php?k=m'>Mjesecne</a></button></span>";
+				echo "<span style='padding-left:250px;'><a href='pregled_karata.php?k=j'><button>Jednodnevne</button></a></span><br><br>";
+				echo "<span style='padding-left:285px;'><a href='pregled_karata.php?k=m'><button>Mjesecne</button></a></span>";
 				echo "</p>"; 
 		  	echo "</div>";
 		  	echo "<div class='desni2'>";
@@ -101,8 +101,8 @@
 			echo "<div class='lijevi2'>";
 				echo "<br><br><br><br>";
 				echo "<p>";
-				echo "<span style='padding-left:250px;'><button><a href='pregled_karata.php?k=j'>Jednodnevne</a></button></span><br><br>";
-				echo "<span style='padding-left:285px;'><button><a href='pregled_karata.php?k=m'>Mjesecne</a></button></span>";
+				echo "<span style='padding-left:250px;'><a href='pregled_karata.php?k=j'><button>Jednodnevne</button></a></span><br><br>";
+				echo "<span style='padding-left:285px;'><a href='pregled_karata.php?k=m'><button>Mjesecne</button></a></span>";
 				echo "</p>"; 
 		  	echo "</div>";
 		  	echo "<div class='desni2'>";
