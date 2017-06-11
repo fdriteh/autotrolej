@@ -29,7 +29,7 @@
 	<title>Osobni podaci</title>
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="autotrolej.css">
+		<link rel="stylesheet" type="text/css" href="/css/autotrolej.css">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 </head>
 <body>
@@ -75,7 +75,7 @@
 	 		echo "<div class='lijevi'>";
 				echo "<h1>Osobni podaci</h1><br>";
 				echo "<p>";
-			 	echo "<a href='user_page.php?i=2'><img src='default.gif' width='150' height='150' border='0'></a><br>";
+			 	echo "<a href='user_page.php?i=2'><img src='/img/default.gif' width='150' height='150' border='0'></a><br>";
 			  	echo $ime."<br>";
 			  	echo "<a class='btn btn-primary btn-lg' href='user_page.php?i=1' role='button'>Izmjeni profil</a>";
 			  	echo "</p>"; 
@@ -117,7 +117,7 @@
 	  		echo "<div class='lijevi'>";
 				echo "<h1>Osobni podaci</h1><br>";
 				echo "<p>";
-			 	echo "<a href='autotrolej.php'><img src='default.gif' width='150' height='150' border='0'></a><br>";
+			 	echo "<a href='autotrolej.php'><img src='/img/default.gif' width='150' height='150' border='0'></a><br>";
 			  	echo $ime."<br>";
 			  	echo "</p>"; 
 	  		echo "</div>";
@@ -138,7 +138,7 @@
 	  		echo "<div class='lijevi'>";
 				echo "<h1>Osobni podaci</h1><br>";
 				echo "<p>";
-			 	echo "<a href='user_page.php?i=2'><img src='default.gif' width='150' height='150' border='0'></a><br>";
+			 	echo "<a href='user_page.php?i=2'><img src='/img/default.gif' width='150' height='150' border='0'></a><br>";
 			  	echo $ime."<br>";
 			  	echo "<a class='btn btn-primary btn-lg' href='user_page.php?i=1' role='button'>Izmjeni profil</a>";
 			  	echo "</p>"; 

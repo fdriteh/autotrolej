@@ -18,7 +18,7 @@
 	<p id='cijena'>Cijena: 10kn</p>
 	<form action='kupnja.php' method='POST' id='form'>
 	<p>Odaberite način plaćanja</p>
-	<img src='visa.png' id='img1' class='slika1' width='50' height='55' onclick='okvir()'>
+	<img src='/img/visa.png' id='img1' class='slika1' width='50' height='55' onclick='okvir()'>
 		<input type='hidden' name='karta' value='4'>
 		<input type='submit' value='Nastavi'>
 	</form>

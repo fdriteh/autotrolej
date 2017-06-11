@@ -34,7 +34,7 @@
 	<title>Autotrolej</title>
 
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="kupnja.css">
+		<link rel="stylesheet" type="text/css" href="/css/kupnja.css">
 		<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 		
 			<script type='text/javascript'>
@@ -131,9 +131,9 @@
 							echo "&nbsp;&nbsp;<span id='cijena'>Cijena: 110kn</span>";
 							echo "<form action='kupnja.php' method='POST' id='form'>";
 							echo "<br><p>Odaberite način plaćanja</p>";
-							echo "<img src='visa.png' id='img1' width='50' height='55'>&nbsp;";
+							echo "<img src='/img/visa.png' id='img1' width='50' height='55'>&nbsp;";
 							echo "<input type='radio' name='metoda' value='visa' checked><br>";
-							echo "<img src='paypal.png' id='img2' width='60' height='60'>&nbsp;";
+							echo "<img src='/img/paypal.png' id='img2' width='60' height='60'>&nbsp;";
 							echo "<input type='radio' name='metoda' value='paypal'><br><br>";
 							echo "<input type='hidden' id='hid' name='cijena' value='110'>";
 							echo "<input type='hidden' name='karta' value='5'>";
