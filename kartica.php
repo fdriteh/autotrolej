@@ -11,9 +11,8 @@
 
 	$result = $con->query("SELECT * FROM korisnik WHERE email='$email'");
 	$row = $result->fetch_array();
-	$result = $con->query("INSERT INTO kartica(brojkartice,idkorisnik) VALUES('$kartica','$id')");
-
 	$id = $row['id'];
+	$result = $con->query("INSERT INTO kartica(brojkartice,idkorisnik) VALUES('$kartica','$id')");
 	
 	mysqli_close($con);
 
