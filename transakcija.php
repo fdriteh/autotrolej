@@ -8,7 +8,7 @@
 
 	$logged1 = !empty($_SESSION['logged1']) ? $_SESSION['logged1'] : '';
 	$ime = !empty($_SESSION['ime']) ? $_SESSION['ime'] : '';
-	$email2 = !empty($_SESSION['email2']) ? $_SESSION['email2'] : '';
+	$email2 = !empty($_SESSION['email']) ? $_SESSION['email'] : '';
 	$cijena = !empty($_POST['cijena']) ? $_POST['cijena'] : '';
 	$bool = !empty($_SESSION['bool']) ? $_SESSION['bool'] : '0';
 	$zona = !empty($_SESSION['zona']) ? $_SESSION['zona'] : '';
