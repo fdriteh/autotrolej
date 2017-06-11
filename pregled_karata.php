@@ -11,8 +11,8 @@
 	$email = $_SESSION['email'];
 	$k = !empty($_GET['k']) ? $_GET['k'] : '';
 
-	$result = $con->query("SELECT * FROM korisnik k JOIN transakcija t on k.id = t.idkorisnik WHERE email='$email' AND kartica=0 ORDER BY t.datum DESC");
-	$result2 = $con->query("SELECT * FROM korisnik k JOIN transakcija t on k.id = t.idkorisnik WHERE email='$email' AND kartica=1 ORDER BY t.datum DESC");
+	$result = $con->query("SELECT * FROM korisnik k JOIN transakcija t on k.id = t.idkorisnik WHERE email='$email' AND kartica=0 ORDER BY t.datum DESC, t.id DESC");
+	$result2 = $con->query("SELECT * FROM korisnik k JOIN transakcija t on k.id = t.idkorisnik WHERE email='$email' AND kartica=1 ORDER BY t.datum DESC, t.id DESC");
 ?>
 
 <!DOCTYPE html>
