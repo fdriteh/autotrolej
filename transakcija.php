@@ -26,7 +26,7 @@
 		$row = $result->fetch_array();
 		$id = $row['id'];
 		if($bool == 1) {
-			$result = $con->query("INSERT INTO transakcija(idkorisnik,kartica,datum,zona,cijena) VALUES('$id','$bool','$date','$zona','$cijena')");
+			$result = $con->query("INSERT INTO transakcija(idkorisnik,kartica,datum,zona,cijena,QR) VALUES('$id','$bool','$date','$zona','$cijena','$QRkod')");
 			$result2 = $con->query("UPDATE kartica SET datum_obnove = '$date' WHERE idkorisnik = '$id'");
 			poruka($email2,$subject,$message1);
 			alert("Poštovani ".$ime.", uspješno ste kupili dnevnu kartu.","autotrolej.php");
