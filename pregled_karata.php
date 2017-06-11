@@ -54,7 +54,7 @@
 						echo "<li><a href='registracija.php'><i class='fa fa-user-plus' aria-hidden='true'></i> Registracija</a></li>";
 						echo "<li><a href='login.php'><i class='fa fa-user' aria-hidden='true'></i>Login</a></li>";
 					} else {
-						echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#''><i class='fa fa-user' aria-hidden='true'></i> Korisnik: ".$ime."<span class='caret'></span></a><ul class='dropdown-menu'><li><a href='user_page.php'>Osobni podaci</a></li><li><a href='#'>Favoriti</a></li><li><a href='#'>Kupljene karte</a></li></ul></li>";
+						echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#''><i class='fa fa-user' aria-hidden='true'></i> Korisnik: ".$ime."<span class='caret'></span></a><ul class='dropdown-menu'><li><a href='user_page.php'>Osobni podaci</a></li><li><a href='#'>Favoriti</a></li><li><a href='/pregled_karata.php'>Kupljene karte</a></li></ul></li>";
 						//echo "<li><a href=''><i class='fa fa-user' aria-hidden='true'></i> Korisnik: ".$ime."</a></li>";
 						echo "<li><a href='logout.php'><i class='fa fa-power-off' aria-hidden='true'></i> Logout</a></li>";
 					}
