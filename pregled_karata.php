@@ -42,7 +42,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Raspored</a></li>
 				<li><a href="#">Planiranje puta</a></li>
-				<li><a href="kupnja.php">Kupnja karta</a></li>
+				<li><a href="kupnja.php">Kupnja karte</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<?php
@@ -130,7 +130,7 @@
 			 		 <p>Za svaku liniju postoji raspored u koliko busevi voze i koliko je potrebno da dođu do određene stanice</p>
 				</div>
 				<div class="col-lg-4 col-sm-6">
-			 		<h3><span class="boja"><i class="fa fa-ticket" aria-hidden="true"></i></span> Kupnja karta</h3>
+			 		<h3><span class="boja"><i class="fa fa-ticket" aria-hidden="true"></i></span> Kupnja karte</h3>
 			 		 <p>Svim gostima je omogućena jednostavna kupnja jednodnevne karte, a registrirani korisnici mogu produžiti mjesečnu kartu</p>
 				</div>
 				<div class="col-lg-4 col-sm-6">

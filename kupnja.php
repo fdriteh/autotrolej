@@ -68,7 +68,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Raspored</a></li>
 				<li><a href="#">Planiranje puta</a></li>
-				<li><a href="kupnja.php">Kupnja karta</a></li>
+				<li><a href="kupnja.php">Kupnja karte</a></li>
 				<?php
 					if($_SESSION['is_admin'])
 						echo "<li><a href=\"admin.php\">Administracija</a></li>";

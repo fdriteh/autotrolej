@@ -36,7 +36,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="#">Raspored</a></li>
 				<li><a href="#">Planiranje puta</a></li>
-				<li><a href="kupnja.php">Kupnja karta</a></li>
+				<li><a href="kupnja.php">Kupnja karte</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="registracija.php"><i class="fa fa-user-plus" aria-hidden="true"></i> Registracija</a></li>
