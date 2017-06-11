@@ -163,3 +163,19 @@ table {
 tr {
     width:100px;
 }
+
+table.pregled tr th, td {
+	padding: 0 8px 0 8px;
+}
+
+table.pregled tr th {
+	background-color: #337DFF;
+}
+
+table.pregled tr.even td {
+	background-color: #478AFF;
+}
+
+table.pregled tr.odd td {
+	background-color: #5C97FF;
+}

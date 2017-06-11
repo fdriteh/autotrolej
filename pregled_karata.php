@@ -77,10 +77,11 @@
 		  	echo "</div>";
 		  	echo "<div class='desni2'>";
 		  	echo "<p>";
-		  	echo "<table border='0'><br><br>";
+		  	echo "<table border='0' class=\"pregled\"><br><br>";
 		  	echo "<tr><th>Datum</th><th>Kod</th><th>Zona</th><th>Cijena</th></tr>";
+				$i = true;
 		  	while ($row = $result->fetch_array()) {
-		  		echo "<tr><td>".$row['datum']."</td><td>".$row['QR']."</td><td>".$row['zona']."</td><td>".$row['cijena']."</td></tr>";
+		  		echo "<tr class=\"".(($i=!$i) ? "even" : "odd")."\"><td>".$row['datum']."</td><td>".$row['QR']."</td><td>".$row['zona']."</td><td>".$row['cijena']."</td></tr>";
 		  	}
 		  	echo "</table>";
 		  	echo "</p>";
@@ -94,10 +95,11 @@
 				echo "</p>"; 
 		  	echo "</div>";
 		  	echo "<div class='desni2'>";
-		  	echo "<table border='0'><br><br>";
+		  	echo "<table border='0' class=\"pregled\"><br><br>";
 		  	echo "<tr><th>Datum</th><th>Zona</th><th>Cijena</th></tr>";
+				$i = true;
 		  	while ($row2 = $result2->fetch_array()) {
-		  		echo "<tr><td>".$row2['datum']."</td><td>".$row2['zona']."</td><td>".$row2['cijena']."</td></tr>";
+		  		echo "<tr class=\"".(($i=!$i) ? "even" : "odd")."\"><td>".$row2['datum']."</td><td>".$row2['zona']."</td><td>".$row2['cijena']."</td></tr>";
 		  	}
 		  	echo "</table>";
 		  	echo "</div>";
